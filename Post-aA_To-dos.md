@@ -11,6 +11,8 @@
 - [ ] Set up Uptime Robot to replace Binary Canary
 - [x] Continue Budget Calc - separate guilt-free spending to bottom right area under chart
 
+## Job Search Materials:
+- [ ] Use flaticon to customize linkedin & github icons on resume
 
 ## Interview Concepts to learn:
 - [ ] JS concepts (closures, currying, etc)
