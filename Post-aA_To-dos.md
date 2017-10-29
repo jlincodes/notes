@@ -7,9 +7,19 @@
 - [ ] Redo JS projects from CNIT 132 & 133 & upload to Github
 - [ ] Learn Machine Learning
 - [ ] Create & polish personal portfolio
-- [ ] Continue OKCupet
-- [ ] Set up Uptime Robot to replace Binary Canary
+- [x] Set up Uptime Robot to replace Binary Canary
 - [x] Continue Budget Calc - separate guilt-free spending to bottom right area under chart
+
+
+## Goals for the next 3 weeks:
+- https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
+- Finish OKCupet Demo
+- Review/learn time/space complexity
+- Study Algorithms
+- Review Ruby/OOP (boardgames)
+- JS30/Review JS concepts (closures, currying, etc.)
+- 1 HackerRank/ 1 LeetCode problem per day, min
+
 
 ## Job Search Materials:
 - [ ] Use flaticon to customize linkedin & github icons on resume
