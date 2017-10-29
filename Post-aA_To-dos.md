@@ -13,6 +13,8 @@
 
 ## Job Search Materials:
 - [ ] Use flaticon to customize linkedin & github icons on resume
+- [ ] Get business cards for networking events
+- [ ] Print out resumes on resume paper
 
 ## Interview Concepts to learn:
 - [ ] JS concepts (closures, currying, etc)
