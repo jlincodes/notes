@@ -1,5 +1,5 @@
 ## Coding Study To-dos:
-- [ ] FreeCodeCamp course
+- [ ] Finish FreeCodeCamp course to work on additional projects
 - [ ] Review JS, Rails, Rails Auth via Codecademy
 - [ ] Finish Codecademy Learn ReactJS Courses
 - [ ] Learn Python
@@ -19,6 +19,7 @@
 - Review Ruby/OOP (boardgames)
 - JS30/Review JS concepts (closures, currying, etc.)
 - 1 HackerRank/ 1 LeetCode problem per day, min
+- Take edX CS 50 course
 
 
 ## Job Search Materials:
