@@ -53,7 +53,6 @@ Big O Hierarchy:
 - Merge sort
 
 ### Polynomial/quadratic O(n^2)
-ex.
 - Quicksort
 - Bubblesort
 - Nested iteration:
@@ -94,7 +93,7 @@ def permutations(array)
 end
 ```
 
-#### ???
+#### What is the Big O of the following?
 
 ```Ruby
 def odd_perms(array)
@@ -105,3 +104,10 @@ def odd_perms(array)
 end
 ```
 n * n
+
+
+benchmark gem:
+https://ruby-doc.org/stdlib-1.9.3/libdoc/benchmark/rdoc/Benchmark.html
+
+
+## LRU Cache
