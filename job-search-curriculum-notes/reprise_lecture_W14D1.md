@@ -111,3 +111,9 @@ https://ruby-doc.org/stdlib-1.9.3/libdoc/benchmark/rdoc/Benchmark.html
 
 
 ## LRU Cache
+- Array of 5
+  - A B C D E
+- Suppose we want to add F into the array. We must shift off the least recently used and push F into the array
+  - B C D E F
+- We want to be able to look up a value in the array super quickly (O(n)), so we create a key-value pair linked list (why? Linked list allows O(1) insertion and deletion)
+- 
