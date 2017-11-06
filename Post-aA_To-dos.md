@@ -2,7 +2,7 @@
 
 ### Review Tutorials/Online Courses:
 - [ ] JavaScript30
-  - [x] 5/30 completed
+  - [x] 8/30 completed
 - [ ] Finish FreeCodeCamp course to work on additional projects
 - [ ] Finish Codecademy React 101 and 102 courses
 - [ ] edX
