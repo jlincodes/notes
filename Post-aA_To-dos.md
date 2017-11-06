@@ -1,37 +1,61 @@
-## Coding Study To-dos:
+## Coding To-dos:
+
+### Review Tutorials/Online Courses:
+- [ ] JavaScript30
+  - [x] 4/30 completed
 - [ ] Finish FreeCodeCamp course to work on additional projects
-- [ ] Review JS, Rails, Rails Auth via Codecademy
-- [ ] Finish Codecademy Learn ReactJS Courses
-- [ ] Learn Python
+- [ ] Finish Codecademy React 101 and 102 courses
+- [ ] edX
+  - [ ] HavardX - CS50 Intro to Computer Science
+  - [ ] Microsoft - DEV293x Intro to NodeJS
+  - [ ] W3Cx - CSS.0x Basic CSS
+  - [ ] BerkeleyX - Agile Development Using Ruby on Rails
+
+### Practice Projects:
 - [ ] Rails Reddit Clone
-- [ ] Redo JS projects from CNIT 132 & 133 & upload to Github
-- [ ] Learn Machine Learning
-- [ ] Create & polish personal portfolio
-- [x] Set up Uptime Robot to replace Binary Canary
-- [x] Continue Budget Calc - separate guilt-free spending to bottom right area under chart
+- [ ] Bench BnB
 
+### New topics:
+- [ ] Python
+  - [ ] Microsoft - DEV 274x Introduction to Python: Fundamentals
+    - https://www.edx.org/course/introduction-python-fundamentals-microsoft-dev274x-0
+- [ ] Machine Learning
 
-## Goals for the next 3 weeks:
-- https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
-- Finish OKCupet Demo
-- Review/learn time/space complexity
-- Study Algorithms
-- Review Ruby/OOP (boardgames)
-- JS30/Review JS concepts (closures, currying, etc.)
-- 1 HackerRank/ 1 LeetCode problem per day, min
-- Take edX CS 50 course
+### Job Search
+<!-- - [ ] Use Flaticon to customize Linkedin & Github icons on resume -->
 
-
-## Job Search Materials:
-- [ ] Use flaticon to customize linkedin & github icons on resume
+- [ ] Submit 150 applications to get taken off roll call
+  - [x] 40/150 applied
 - [ ] Get business cards for networking events
+  - [x] Design business cards
+  - [ ] Order business cards
 - [ ] Print out resumes on resume paper
+- [ ] Finish OKCupet Demo
+  - [ ] Add cute puppies and kittens to splash page
+  - [ ] Add more pets to pet index
+- [x] Refine Budget Calc
+  - [x] separate guilt-free spending & move to bottom right area under chart
+- [x] Add CC to get more Heroku dynos
+- [x] Set up Uptime Robot to replace Binary Canary for Heroku projects
+- [x] Create personal portfolio
+  - [ ] Add additional projects to portfolio
+  - [ ] Continue to refine and polish portfolio
 
-## Interview Concepts to learn:
-- [ ] JS concepts (closures, currying, etc)
-- [ ] time complexity
-- [ ] redux/react vs jQuery + vanilla JS
-- [ ] practice HackerRank problems & write them out on paper to simulate white-boarding and proper allocation of space
+### Interview Prep
+- [ ] https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
+- [ ] Review/learn time/space complexity
+- [ ] Study Algorithms
+- [ ] Review Ruby/OOP (boardgames)
+- [ ] Review JS concepts (closures, currying, etc.)
+- [ ] 1 HackerRank/ 1 LeetCode problem per day, min
+
+### Interview tips from Dallas:
+- review
+  - [ ] JS concepts (closures, currying, etc)
+  - [ ] time complexity
+  - [ ] redux/react vs jQuery + vanilla JS
+- practice HackerRank problems
+  - [ ] write them out on paper to simulate white-boarding and proper allocation of space
 
 
 ```Ruby
