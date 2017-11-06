@@ -40,6 +40,8 @@
 - [x] Create personal portfolio
   - [ ] Add additional projects to portfolio
   - [ ] Continue to refine and polish portfolio
+- [ ] Sign up for Mentat
+- [ ] Try Google job aggregate
 
 ### Interview Prep
 - [ ] https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
