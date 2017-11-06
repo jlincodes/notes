@@ -227,3 +227,29 @@ def destroy
 end
 
 ```
+
+```JavaScript
+const noJob = true;
+const rejections = 0;
+
+while (noJob) {
+  weep();
+  setTimeout(() => breathe(), 5000);
+  noJob = apply();
+}
+
+const breathe = () => {
+  inhale(4);
+  setTimeout(pause, 2000);
+  exhale(4);
+};
+
+const apply = () => {
+  if (accepted) {
+    return true;
+  } else {
+    rejections ++;
+    return false;
+  }
+};
+```
