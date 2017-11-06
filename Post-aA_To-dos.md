@@ -2,7 +2,7 @@
 
 ### Review Tutorials/Online Courses:
 - [ ] JavaScript30
-  - [x] 4/30 completed
+  - [x] 5/30 completed
 - [ ] Finish FreeCodeCamp course to work on additional projects
 - [ ] Finish Codecademy React 101 and 102 courses
 - [ ] edX
@@ -25,7 +25,7 @@
 <!-- - [ ] Use Flaticon to customize Linkedin & Github icons on resume -->
 
 - [ ] Submit 150 applications to get taken off roll call
-  - [x] 40/150 applied
+  - [x] 41/150 applied
 - [ ] Get business cards for networking events
   - [x] Design business cards
   - [ ] Order business cards
