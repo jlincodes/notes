@@ -218,3 +218,39 @@ class Users {
 
 }
 ```
+
+
+## Ways to call a function
+- Function Style: `fun(arg1, arg2)`
+- Method Style: `obj.method(arg1, arg2)`
+- Constructor Style: `new`
+- `apply(thisArg, [argsArray])`
+- `call(thisArg[, arg1[, arg2[,]]])`
+- do not use arrow functions for instance methods!
+
+## Arguments
+- functions happily accept more or fewer arguments than expected
+  - array-like `arguments` variable
+  - `rest` operator
+
+## Class Syntax
+- JavaScript uses prototypal inheritance
+  - ES6 classes are syntactic sugar
+
+## Module Pattern
+- allows us to split our code into multiple files
+  - similar to ruby's `require` and `require_relative`
+- two steps: exporting & importing
+
+## Callbacks
+- functions that are passed to other functions as arguments
+
+## Event Loop
+- will be asked during lots of frontend positions
+- recommend being able to draw out the event loop
+- Asynchronous functions schedule work to be done in the background
+  - ex. Timers, AJAX requests, events
+- Callbacks are invoked when action needs to occur & stack is empty
+
+### Other things to note:
+- scope versus context
