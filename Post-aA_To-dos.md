@@ -42,8 +42,15 @@
   - [ ] Continue to refine and polish portfolio
 - [ ] Sign up for Mentat
 - [ ] Try Google job aggregate
+- [x] Reach out to VM and KL (also coding bootcamp grads) for any advice they may have on post-bootcamp job search
+- [x] Email resume to LC @ Patreon
 
 ### Interview Prep
+- [ ] Study Frontend Basic Interview Questions: https://github.com/rlee0525/TechnicalConceptsForInterviews/blob/master/FrontendBasics.md
+  - [x] make Anki flash cards to study
+- [ ] Study closures and how to explain what closures are:
+  - http://javascriptissexy.com/understand-javascript-closures-with-ease/
+  - https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
 - [ ] https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
 - [ ] Review/learn time/space complexity
 - [ ] Study Algorithms
@@ -59,6 +66,20 @@
 - practice HackerRank problems
   - [ ] write them out on paper to simulate white-boarding and proper allocation of space
 
+### Phone screen tips from Josh:
+- Revise personal pitch
+  - spend less time talking about "how I became interested in coding and how I got to this point"
+  - spend more time talking about projects (i.e. describe the project, the technologies used, how the technologies interact with one another, etc.)
+  - reframe pitch
+    - instead of talking just about "why I want to work for XYZ company", include "how I can contribute to XYZ company"
+    - companies, especially start-ups, want employees who can learn fast and hit the ground running because there may not be enough Sr. Devs/Engineers who have time to train.
+- White-boarding/shared-screen coding:
+  - Ask for clarification questions.
+  - Spend more time brain storming
+    - Coming up with a brute-force solution is fine. Think about the time complexity of the brute-force method. Then try to think of a better way to approach the problem and optimize the solution.
+    - Write out test cases (inputs and outputs) and any possible edge cases.
+- General tips for job search:
+  - Getting a response from cold applications will be difficult, especially for junior developers. Try LinkedIn: look for that one friend who has a ton of connections and look through his/her connections. Find people who work for small startups and ask that friend to connect you with that person. Then ask if that start-up is hiring.
 
 ```Ruby
 # Max product of 3 integers in an array of integers (both positive and negative)
