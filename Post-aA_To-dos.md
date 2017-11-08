@@ -2,7 +2,7 @@
 
 ### Review Tutorials/Online Courses:
 - [ ] JavaScript30
-  - [x] 8/30 completed
+  - [x] 9/30 completed
 - [ ] Finish FreeCodeCamp course to work on additional projects
 - [ ] Finish Codecademy React 101 and 102 courses
 - [ ] edX
@@ -25,10 +25,10 @@
 <!-- - [ ] Use Flaticon to customize Linkedin & Github icons on resume -->
 
 - [ ] Submit 150 applications to get taken off roll call
-  - [x] 41/150 applied
-- [ ] Get business cards for networking events
+  - [x] 61/150 applied
+- [x] Get business cards for networking events
   - [x] Design business cards
-  - [ ] Order business cards
+  - [x] Order business cards
 - [ ] Print out resumes on resume paper
 - [ ] Finish OKCupet Demo
   - [ ] Add cute puppies and kittens to splash page
@@ -52,7 +52,7 @@
 - [ ] 1 HackerRank/ 1 LeetCode problem per day, min
 
 ### Interview tips from Dallas:
-- review
+- review:
   - [ ] JS concepts (closures, currying, etc)
   - [ ] time complexity
   - [ ] redux/react vs jQuery + vanilla JS
