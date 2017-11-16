@@ -2,7 +2,7 @@
 
 ### Review Tutorials/Online Courses:
 - [ ] JavaScript30
-  - [x] 17/30 completed
+  - [x] 18/30 completed
 - [ ] Finish FreeCodeCamp course to work on additional projects
 - [ ] Finish Codecademy React 101 and 102 courses
 - [ ] edX
@@ -14,6 +14,11 @@
 ### Practice Projects:
 - [ ] Rails Reddit Clone
 - [ ] Bench BnB
+
+### OKCupet
+- [x] Remove console logs
+- [ ] Figure out why default profile image doesn't show up for conversation show
+- [ ] Add componentWillUnmount and clear conversation show
 
 ### New topics:
 - [ ] Python
