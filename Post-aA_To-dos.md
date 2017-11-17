@@ -30,7 +30,7 @@
 <!-- - [ ] Use Flaticon to customize Linkedin & Github icons on resume -->
 
 - [ ] Submit 150 applications to get taken off roll call
-  - [x] 86/150 applied
+  - [x] 106/150 applied
 - [x] Get business cards for networking events
   - [x] Design business cards
   - [x] Order business cards
