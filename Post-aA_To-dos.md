@@ -30,7 +30,8 @@
 <!-- - [ ] Use Flaticon to customize Linkedin & Github icons on resume -->
 
 - [ ] Submit 150 applications to get taken off roll call
-  - [x] 106/150 applied
+  - [x] 127/150 applied
+  - [x] 25 will apply
 - [x] Get business cards for networking events
   - [x] Design business cards
   - [x] Order business cards
@@ -49,6 +50,7 @@
 - [ ] Try Google job aggregate
 - [x] Reach out to VM and KL (also coding bootcamp grads) for any advice they may have on post-bootcamp job search
 - [x] Email resume to LC @ Patreon
+- [ ] Reach out to EH re: Reach
 
 ### Interview Prep
 - [ ] Study Frontend Basic Interview Questions: https://github.com/rlee0525/TechnicalConceptsForInterviews/blob/master/FrontendBasics.md
