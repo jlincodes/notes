@@ -52,3 +52,22 @@ const twoSum = (arr, target) => {
 ```
 - Time complexity - O(n<sup>2</sup>)
 - Space complexity - O(1)
+
+Two-Pass Hash Method:
+```Ruby
+def two_sum(arr, target)
+  hash = {}
+  arr.each_with_index do |i, idx|
+    hash[i] = idx
+  end
+
+  arr.each_with_index do |i, idx1|
+    idx2 = hash[target-i]
+    if idx2 != nil && idx1 != idx2
+      return [idx1, idx2]
+    end
+  end
+end
+```
+- Time complexity - O(n)
+- Space complexity - O(1)
