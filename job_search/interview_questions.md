@@ -22,3 +22,33 @@ You don't have to go crazy here, but review a couple of:
 - Tree traversals (just memorize all of these inorder, preorder, postorder, level order)
 - Traversals - Dijkstra's, A*, BFS, DFS (know the difference between DFS and BFS when would you use one over the other and why - hint, is usually matters when you don't have to search the whole space. Also make sure that you can code recursively and using your own stack/queue)
 - All the prefix-tree searches
+
+#### Two Sum
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Brute Force Method:
+```Ruby
+def two_sum(arr, target)
+  arr.each_with_index do |i, idx1|
+    arr.each_with_index do |j, idx2|
+      next if idx1 == idx2
+      return [idx1, idx2] if (i+j) == target
+    end
+  end
+end
+```
+```JavaScript
+const twoSum = (arr, target) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (j = i + 1; j < arr.length; j++) {
+      if (arr[j] === target - arr[i]) {
+        return [i,j]
+      }
+    }
+  }
+};
+```
+- Time complexity - O(n<sup>2</sup>)
+- Space complexity - O(1)
