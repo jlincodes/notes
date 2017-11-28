@@ -39,4 +39,5 @@ While comparing a string or number to an object, try to convert the object to a 
 Be careful while comparing objects, identifiers must reference the same objects or same array.
 
 **Special note**: `NaN`, `null` and `undefined` will never `===` another type. `NaN` does not even `===` itself."
+
 Source: [thatjsdude.com - JS: Basics and Tricky Questions](http://www.thatjsdude.com/interview/js2.html#doubleVsTripleEqual)
