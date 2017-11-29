@@ -21,38 +21,8 @@ But the following [1,2,2,null,3,null,3] is not:
 Note:
 Bonus points if you could solve it both recursively and iteratively.
 
-Recursive Approach:
-```Ruby
-# Definition for a binary tree node.
-# class TreeNode
-#     attr_accessor :val, :left, :right
-#     def initialize(val)
-#         @val = val
-#         @left, @right = nil, nil
-#     end
-# end
+**Iterative Approach:**
 
-# @param {TreeNode} root
-# @return {Boolean}
-
-def is_symmetric(root)
-    return true if root.nil?
-    is_mirror?(root.left, root.right)
-end
-
-def is_mirror?(left, right)
-    return true if left.nil? && right.nil?
-    return false if left.nil? || right.nil?
-    return (left.val == right.val) &&
-        is_mirror?(left.left, right.right) &&
-        is_mirror?(left.right, right.left)
-end
-```
-- Time complexity - O(n). <i>n</i> is the number of nodes in the tree.
-- Space complexity - O(n), where <i>n</i> is the height of the tree. We have to call is_mirror recursively <i>n</i> number of times based on the height of the tree.
-
-
-Iterative Approach:
 ```Ruby
 # Definition for a binary tree node.
 # class TreeNode
@@ -85,3 +55,33 @@ def is_symmetric(root)
   return true
 end
 ```
+
+**Recursive Approach:**
+```Ruby
+# Definition for a binary tree node.
+# class TreeNode
+#     attr_accessor :val, :left, :right
+#     def initialize(val)
+#         @val = val
+#         @left, @right = nil, nil
+#     end
+# end
+
+# @param {TreeNode} root
+# @return {Boolean}
+
+def is_symmetric(root)
+  return true if root.nil?
+  is_mirror?(root.left, root.right)
+end
+
+def is_mirror?(left, right)
+  return true if left.nil? && right.nil?
+  return false if left.nil? || right.nil?
+  return (left.val == right.val) &&
+  is_mirror?(left.left, right.right) &&
+  is_mirror?(left.right, right.left)
+end
+```
+- Time complexity - O(n). <i>n</i> is the number of nodes in the tree.
+- Space complexity - O(n), where <i>n</i> is the height of the tree. We have to call is_mirror recursively <i>n</i> number of times based on the height of the tree.
