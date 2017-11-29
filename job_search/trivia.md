@@ -2,6 +2,31 @@
 
 ## JavaScript
 
+#### What is the difference between a variable that is null, undefined, or undeclared?
+- Undeclared variable hasn't been declared yet.
+- Undefined variable has been declared but has not had a value assigned to it. (ex. `let a;`)
+- `null` variable is a declared variable with the value of `null` assigned to it.
+
+Source: [Frontend Interview Questions - The Basics](https://github.com/rlee0525/TechnicalConceptsForInterviews/blob/master/FrontendBasics.md#whats-the-difference-between-a-variable-that-is-null-undefined-or-undeclared)
+
+#### What is the difference between `==` and `===`
+"... `==` will not check types and `===` will check whether both sides are of same type. So, `==` is tolerant. But under the hood it converts to its convenient type to have both in same type and then do the comparison.
+
+`===` compares the types and values. Hence, if both sides are not same type, answer is always false. For example, if you are comparing two strings, they must have identical character sets. For other primitives (number, boolean) must share the same value.
+
+Rule for implicit coercion: Comparison by using `==` does implicit type conversion under the hood. And rules for implicit coercion are as follows-
+
+If both operands are same type use `===`
+undefined `==` null
+If one operands is string another is number, convert string to number
+If one is boolean and another is non-boolean, convert boolean to number and then perform comparison
+While comparing a string or number to an object, try to convert the object to a primitive type and then try to compare
+Be careful while comparing objects, identifiers must reference the same objects or same array.
+
+**Special note**: `NaN`, `null` and `undefined` will never `===` another type. `NaN` does not even `===` itself."
+
+Source: [thatjsdude.com - JS: Basics and Tricky Questions](http://www.thatjsdude.com/interview/js2.html#doubleVsTripleEqual)
+
 #### Explain the difference between classical inheritance and prototypal inheritance.
 
 The great thing about JavaScript is the ability to do away with the rigid rules of classical inheritance and let objects inherit properties from other objects.
@@ -23,21 +48,3 @@ Well, to be exact, the properties and methods are defined on the `prototype` pro
 "...a link is made between the object instance and its prototype (its `__proto__` property, which is derived from the `prototype` property on the constructor), and the properties and methods are found by walking up the chain of prototypes."
 
 Source: [Object Prototypes MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
-
-#### What is the difference between `==` and `===`
-"... `==` will not check types and `===` will check whether both sides are of same type. So, `==` is tolerant. But under the hood it converts to its convenient type to have both in same type and then do the comparison.
-
-`===` compares the types and values. Hence, if both sides are not same type, answer is always false. For example, if you are comparing two strings, they must have identical character sets. For other primitives (number, boolean) must share the same value.
-
-Rule for implicit coercion: Comparison by using `==` does implicit type conversion under the hood. And rules for implicit coercion are as follows-
-
-If both operands are same type use `===`
-undefined `==` null
-If one operands is string another is number, convert string to number
-If one is boolean and another is non-boolean, convert boolean to number and then perform comparison
-While comparing a string or number to an object, try to convert the object to a primitive type and then try to compare
-Be careful while comparing objects, identifiers must reference the same objects or same array.
-
-**Special note**: `NaN`, `null` and `undefined` will never `===` another type. `NaN` does not even `===` itself."
-
-Source: [thatjsdude.com - JS: Basics and Tricky Questions](http://www.thatjsdude.com/interview/js2.html#doubleVsTripleEqual)
