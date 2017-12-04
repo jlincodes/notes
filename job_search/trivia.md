@@ -48,3 +48,64 @@ Well, to be exact, the properties and methods are defined on the `prototype` pro
 "...a link is made between the object instance and its prototype (its `__proto__` property, which is derived from the `prototype` property on the constructor), and the properties and methods are found by walking up the chain of prototypes."
 
 Source: [Object Prototypes MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+
+
+#### Explain the difference between pass by value and pass by reference.
+Primitive type (`null`, `undefined` , `boolean`, `number`, `string` and ES6 `symbol`) are passed by value and objects are passed by reference. If you change a property of the passed object, the change will be affected. However, you assign a new object to the passed object, the changes will not be reflected.
+
+Example:
+```JavaScript
+var a = 2;        // 'a' hold a copy of the value 2.
+var b = a;        // 'b' is always a copy of the value in 'a'
+b++;
+console.log(a);   // 2
+console.log(b);   // 3
+var c = [1,2,3];
+var d = c;        // 'd' is a reference to the shared value
+d.push( 4 );      // Mutates the referenced value (object)
+console.log(c);   // [1,2,3,4]
+console.log(d);   // [1,2,3,4]
+/* Compound values are equal by reference */
+var e = [1,2,3,4];
+console.log(c === d);  // true
+console.log(c === e);  // false
+```
+
+Sources:
+- [That JS Dude | Pass by value vs by reference](https://thatjsdude.com/interview/js2.html#byValueByRef)
+- [freecodecamp | The Definitive JavaScript Handbook for a developer interview](https://medium.freecodecamp.org/the-definitive-javascript-handbook-for-a-developer-interview-44ffc6aeb54e)
+
+
+#### What is the drawback of creating a true private function in JS?
+"One of the drawbacks of creating true private methods in JavaScript is that they are very memory-inefficient, as a new copy of the method would be created for each instance."
+
+```JavaScript
+var Employee = function (name, company, salary) {
+    this.name = name || "";       //Public attribute default value is null
+    this.company = company || ""; //Public attribute default value is null
+    this.salary = salary || 5000; //Public attribute default value is null
+
+    // Private method
+    var increaseSalary = function () {
+        this.salary = this.salary + 1000;
+    };
+
+    // Public method
+    this.dispalyIncreasedSalary = function() {
+        increaseSlary();
+        console.log(this.salary);
+    };
+};
+
+// Create Employee class object
+var emp1 = new Employee("John","Pluto",3000);
+// Create Employee class object
+var emp2 = new Employee("Merry","Pluto",2000);
+// Create Employee class object
+var emp3 = new Employee("Ren","Pluto",2500);
+```
+"Here each instance variable `emp1`, `emp2`, `emp3` has its own copy of the increaseSalary private method.
+
+So, as a recommendation, don’t use private methods unless it’s necessary."
+
+Source: [CodeMentor | 21 Essential JavaScript Interview Questions](https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z#what-is-the-drawback-of-creating-true-private-methods-in-javascript)
