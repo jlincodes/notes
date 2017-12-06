@@ -25,3 +25,5 @@ def delete_node(node)
     end
 end
 ```
+
+Source: [Leetcode](https://leetcode.com/problems/delete-node-in-a-linked-list/solution/)
