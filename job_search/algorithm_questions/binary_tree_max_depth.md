@@ -24,4 +24,24 @@ def max_depth(root)
 end
 ```
 
+```JavaScript
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+
+const maxDepth = (root) => {
+  if (root === null) return 0;
+
+  let lDepth = maxDepth(root.left);
+  let rDepth = maxDepth(root.right);
+
+  if (lDepth > rDepth) {
+    return lDepth + 1;
+  } else {
+    return rDepth + 1;
+  }
+};
+```
+
 Source: [Leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
