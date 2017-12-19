@@ -158,3 +158,74 @@ Unlike function calls and method calls, a constructor call `new Employee('John D
 The primary role of the constructor function is to initialize the object."
 
 Source: [123 Essential JavaScript Interview Questions](https://github.com/nishant8BITS/123-Essential-JavaScript-Interview-Question#difference-between-function-method-and-constructor-calls-in-javascript)
+
+## Can you describe the main difference between a forEach and a .map() and why you would pick one versus the other?
+
+- "`forEach()` — executes a provided function once for each array element.
+- `map()` — creates a new array with the results of calling a provided function on every element in the calling array.""
+
+"The `forEach()` method doesn’t actually return anything (undefined). It simply mutates the current array by calling a provided function on each element in your array.
+Meanwhile, the `map()` method will also call a provided function on every element in the array. The difference is that `map()` utilizes return values and actually returns a new Array of the same size."
+
+- `forEach()` is also slower than `map()`
+- `map()` may be preferable for functional programming because `map()` does not mutate the original array.
+- "`forEach()` may be preferable when you’re not trying to change the data in your array, but instead want to just do something with it — like saving it to a database or logging it out"
+- "`map()` might be preferable when changing or altering data. Not only is it faster but it returns a new Array. This means we can do cool things like chaining on other methods ( `map()`, `filter()`, `reduce()`, etc.)"
+
+TL;DR:
+- "Just about anything you can do with `forEach()` you can do with `map()`, and vise versa.
+- `map()` allocates memory and stores return values. `forEach()` throws away return values and always returns `undefined`.
+- `forEach()` will allow a callback function to mutate the current array. `map()` will instead return a new array".
+
+Source: [codeburst.io](https://codeburst.io/javascript-map-vs-foreach-f38111822c0f)
+
+### Explain the difference between function declaration vs. function expression.
+"Function declarations begin with the ‘function’ keyword and must be named. We can pass values in the form of arguments and also return values. If a value is not returned, then the function will return undefined."
+
+```JavaScript
+function helloWorld() {
+  return "hello world";
+}
+```
+
+Function expressions
+```JavaScript
+var helloWorld = function() {
+  return "hello world";
+}
+```
+
+"Although function declarations and function expressions are similar and often interchangeable, there is an important distinction:
+
+Function Declarations are hoisted or pulled to the top of the function making them available regardless of position. So, we can call a function and then declare it further down and still access the function.
+
+This may seem confusing since javascript typically interprets code line by line, from top to bottom. Despite this, function and also variable declarations are hoisted by the javascript interpreter while function and variables expressions are not."
+
+
+**Example:**
+
+Function Declaration:
+```JavaScript
+function foo() {
+  bar();
+  function bar() {
+    console.log("bar");
+  }
+}
+
+foo(); // "bar"
+```
+
+Function Expression:
+```JavaScript
+function foo() {
+  bar();
+  var bar = function() {
+    console.log("bar");
+  }
+}
+
+foo(); // returns "TypeError: bar is not a function"
+```
+
+Source: [learnsteady](http://www.learnsteady.com/javascript-function-declaration-vs-expression/)
