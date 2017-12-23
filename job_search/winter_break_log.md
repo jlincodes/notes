@@ -1,7 +1,13 @@
-### 12/20 Day 3:
-- [x] freecodecamp HTML/CSS Review
+### 12/18 Day 1:
 - [x] Leetcode problem
   - Merge Sorted Array
+
+### 12/19 Day 2:
+- [x] Leetcode problem
+  - Finish Merge Sorted Array
+
+### 12/20 Day 3:
+- [x] freecodecamp HTML/CSS Review
 
 ### 12/21 Day 4:
 - [x] freecodecamp HTML/CSS Review
