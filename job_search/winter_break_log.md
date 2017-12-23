@@ -18,6 +18,7 @@
   - First React Component
   - Components & Advanced JSX
 
-### 12/22 Day 5:
+### 12/23 Day 6:
 - [x] Codecademy ReactJS Review
   - Components Render Other Components
+  - `this.props`
