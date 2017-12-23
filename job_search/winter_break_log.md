@@ -11,3 +11,7 @@
 - [x] Codecademy ReactJS Review
   - First React Component
   - Components & Advanced JSX
+
+### 12/22 Day 5:
+- [x] Codecademy ReactJS Review
+  - Components Render Other Components
