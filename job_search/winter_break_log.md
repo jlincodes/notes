@@ -22,3 +22,4 @@
 - [x] Codecademy ReactJS Review
   - Components Render Other Components
   - `this.props`
+  - `this.state`
