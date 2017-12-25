@@ -32,3 +32,4 @@
 
 ### 12/24 Day 7:
 - [ ] ReactJS Review
+  - Style
