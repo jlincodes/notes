@@ -33,3 +33,4 @@
 ### 12/24 Day 7:
 - [ ] ReactJS Review
   - Style
+  - Container Components from Presentational Components
