@@ -37,4 +37,20 @@
   - Stateless Functional Components
     - When a container components is separated from a *presentational* component, the presentational component will always end up with one `render()` function and no other properties.
     - Presentational component classes with nothing but a render function can be rewritten as a JavaScript function.
-    
+
+```JavaScript
+export class MyComponentClass extends React.component {
+  render() {
+    return <h1>Hello world</h1>;
+  }
+}
+
+export const MyComponentClass = () => {
+  return <h1>Hello world</h1>;
+}
+
+ReactDOM.render(
+  <MyComponentClass />,
+  document.getElementById('app')
+);
+```
