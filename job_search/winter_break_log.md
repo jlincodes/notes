@@ -35,3 +35,6 @@
   - Style
   - Container Components from Presentational Components
   - Stateless Functional Components
+    - When a container components is separated from a *presentational* component, the presentational component will always end up with one `render()` function and no other properties.
+    - Presentational component classes with nothing but a render function can be rewritten as a JavaScript function.
+    
