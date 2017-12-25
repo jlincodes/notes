@@ -34,3 +34,4 @@
 - [ ] ReactJS Review
   - Style
   - Container Components from Presentational Components
+  - Stateless Functional Components
