@@ -65,3 +65,7 @@ ReactDOM.render(
 - [ ] ReactJS Review
   - PropTypes
   - Forms
+    - Controlled vs uncontrolled component:
+      - An *uncontrolled component* maintains its own internal state. Ex. A typical `<input type='text' />` element keeps track of its own text, thus making it an *uncontrolled component* - it maintains its own internal state by remembering data about itself.
+      - A *controlled component* does not maintain any internal state (i.e. has no memory) and must receive information through `props`. Most React components are *controlled*.
+      - In React, when `<input />` is given a `value` attribute, the `<input />` becomes controlled because it stops using its own internal storage.
