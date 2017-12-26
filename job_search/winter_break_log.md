@@ -95,5 +95,7 @@ ReactDOM.render(
   - [x] Complete Codecademy ReactJS: Part II
 
 ### 12/26 Day 9:
-- [ ] Start JS Review
+- [x] Start JS Review
   - Codecademy JS Course
+    - Intro to JS
+    - Variables
