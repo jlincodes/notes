@@ -93,3 +93,7 @@ ReactDOM.render(
       - `render`
       - `componentDidUpdate`
   - [x] Complete Codecademy ReactJS: Part II
+
+### 12/26 Day 9:
+- [ ] Start JS Review
+  - Codecademy JS Course
