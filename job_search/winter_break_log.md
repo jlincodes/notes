@@ -31,7 +31,7 @@
     - Child Components Update Their Siblings' props
 
 ### 12/24 Day 7:
-- [ ] ReactJS Review
+- [x] ReactJS Review
   - Style
   - Container Components from Presentational Components
   - Stateless Functional Components
@@ -60,3 +60,8 @@ ReactDOM.render(
   document.getElementById('app')
 );
 ```
+
+### 12/25 Day 8:
+- [ ] ReactJS Review
+  - PropTypes
+  
