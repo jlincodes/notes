@@ -110,3 +110,4 @@ ReactDOM.render(
 - [x] JS Review
   - Objects
   - Classes
+  - Browser Compatibility & Transpilation
