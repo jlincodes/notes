@@ -111,3 +111,4 @@ ReactDOM.render(
   - Objects
   - Classes
   - Browser Compatibility & Transpilation
+  - Modules
