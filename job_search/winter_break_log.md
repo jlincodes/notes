@@ -109,3 +109,4 @@ ReactDOM.render(
 ### 12/27 Day 10:
 - [x] JS Review
   - Objects
+  - Classes
