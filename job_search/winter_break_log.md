@@ -99,3 +99,10 @@ ReactDOM.render(
   - Codecademy JS Course
     - Intro to JS
     - Variables
+    - Control Flow
+    - Functions
+    - Scope
+    - Arrays
+    - Loops
+    - Iterators
+    
