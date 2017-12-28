@@ -111,5 +111,9 @@ ReactDOM.render(
   - Objects
   - Classes
   - Browser Compatibility & Transpilation
+    - 3 reasons for the ES5 to ES6 updates:
+      - A similarity to other programming languages - JS ES6 is syntactically more similar to other object-oriented programming languages; leads to less friction when experienced, non-JS devs wants to learn JS.
+      - Readability and economy of code - the new syntax is often easier to understand (i.e. more readable) and requires fewer characters to create the same functionality (economy of code)
+      - Address source of ES5 bugs - some ES5 syntax led to common bugs. With ES6, ECMA introduced syntax that mitigates some of the most common pitfalls.
   - Modules
   - Requests
