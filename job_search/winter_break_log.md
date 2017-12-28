@@ -105,4 +105,11 @@ ReactDOM.render(
     - Arrays
     - Loops
     - Iterators
-    
+
+### 12/27 Day 10:
+- [x] JS Review
+  - Objects
+  - Classes
+  - Browser Compatibility & Transpilation
+  - Modules
+  - Requests
