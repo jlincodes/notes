@@ -115,5 +115,33 @@ ReactDOM.render(
       - A similarity to other programming languages - JS ES6 is syntactically more similar to other object-oriented programming languages; leads to less friction when experienced, non-JS devs wants to learn JS.
       - Readability and economy of code - the new syntax is often easier to understand (i.e. more readable) and requires fewer characters to create the same functionality (economy of code)
       - Address source of ES5 bugs - some ES5 syntax led to common bugs. With ES6, ECMA introduced syntax that mitigates some of the most common pitfalls.
+    - Transpilation with Babel:
+      - `npm install babel-cli`
+      - `npm install babel-preset-env`
+      - `npm run build`
   - Modules
   - Requests
+
+### 12/28 Day 11:
+
+### 12/29 Day 12:
+
+### 12/30 Day 13:
+  - Todo List App
+
+### 12/31 Day 14:
+  - Todo List App
+
+### 1/1 Day 15:
+  - Todo List App
+
+### 1/2 Day 16:
+  - Todo List App
+
+### 1/3 Day 17:
+  - Schedule mock interviews for the next two weeks
+  - BenchBnb
+
+### 1/4 Day 16:
+  - LeetCode/prep for mock interviews
+  - Study jQuery/prep for job interviews
