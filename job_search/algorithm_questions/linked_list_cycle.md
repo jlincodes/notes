@@ -53,18 +53,19 @@ end
 
 #### JavaScript solution using pointers
 ```JavaScript
-var hasCycle = function(head) {
+const hasCycle = (head) => {
   if (head === null || head.next === null) return false;
 
-  slowPointer = head;
-  fastPointer = head.next;
+  let slowPointer = head;
+  let fastPointer = head.next;
 
   while (slowPointer !== fastPointer) {
     if (fastPointer === null || fastPointer.next === null) {
       return false;
+    } else {
+      slowPointer = slowPointer.next;
+      fastPointer = fastPointer.next.next;
     }
-    slowPointer = slowPointer.next;
-    fastPointer = fastPointer.next.next;
   }
   return true;
 };
