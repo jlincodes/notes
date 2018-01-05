@@ -26,3 +26,5 @@ const longestCommonPrefix = function(strs) {
 
 - Time complexity: **O(S)**, where **S** is the sum of all the characters in all the strings. Worst case: there will be **n** equal strings with length **m** and the algorithm performs **S = m * n** character comparisons. Best case, there are at most **n * minLen** comparisons, where **minLen** is the length of the shortest string in the array.
 - Space Complexity: **O(1)** constant extra space.
+
+Source: [Leetcode](https://leetcode.com/problems/longest-common-prefix/description/)
