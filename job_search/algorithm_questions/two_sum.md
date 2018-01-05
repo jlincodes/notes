@@ -3,7 +3,7 @@ Given an array of integers, return indices of the two numbers such that they add
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-Brute Force Method:
+Brute Force - Ruby:
 ```Ruby
 def two_sum(arr, target)
   arr.each_with_index do |i, idx1|
@@ -14,6 +14,8 @@ def two_sum(arr, target)
   end
 end
 ```
+
+Brute Force - JavaScript (1):
 ```JavaScript
 const twoSum = (arr, target) => {
   for (let i = 0; i < arr.length; i++) {
@@ -25,10 +27,24 @@ const twoSum = (arr, target) => {
   }
 };
 ```
+Brute Force - JavaScript (2):
+```JavaScript
+const twoSum = (nums, target) => {
+  const indices = [];
+  for (let i = 0; i < nums.length; i++) {
+    let temp = target - nums[i];
+    let idx = nums.indexOf(temp);
+    if (nums.includes(temp) && i !== idx) {
+      indices.push(i, idk);
+      return indices;
+    }
+  }
+};
+```
 - Time complexity - O(n<sup>2</sup>)
 - Space complexity - O(1)
 
-Two-Pass Hash Method:
+Two-Pass Hash Method - Ruby:
 ```Ruby
 def two_sum(arr, target)
   hash = {}
@@ -44,5 +60,27 @@ def two_sum(arr, target)
   end
 end
 ```
+
+Two-Pass Hash Method - JavaScript:
+```JavaScript
+const twoSum = (nums, target) => {
+  const indices = [];
+
+  hash = {};
+  nums.forEach((num, idx) => hash[nums[idx]] = idx);
+
+  nums.forEach((num, idx) => {
+    let temp = (target - num).toString();
+    if (hash[temp] !== 'undefined' && hash[temp] !== idx) {
+      indices.push(idx)
+      indices.push(hash[temp]);
+      // forEach() returns 'undefined', so returning `indices` early is not possible
+    }
+  });
+  // return indices at the end of the function but only the first 2 elements
+  return indices.slice(0, 2); 
+};
+```
+
 - Time complexity - O(n)
 - Space complexity - O(1)
