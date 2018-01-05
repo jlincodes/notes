@@ -40,4 +40,23 @@ def reverse(x)
 end
 ```
 
+```JavaScript
+const reverse = (x) => {
+  const arr = x.toString().split('').reverse();
+  let results = [];
+  arr.forEach((el, idx) => {
+    if (el === '-') {
+      results.unshift(el);
+    } else if (el === '0' && idx !== 0) {
+      results.push(el);
+    } else {
+      results.push(el);
+    }
+  });
+  results = parseInt(results.join(''));
+
+  return (results > 2147483647 || results < -2147483648) ? 0 : results;
+};
+```
+
 Source: [Leetcode](https://leetcode.com/problems/delete-node-in-a-linked-list/solution/)
