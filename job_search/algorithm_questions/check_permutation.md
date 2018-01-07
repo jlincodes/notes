@@ -40,8 +40,23 @@ permutation('dog', 'God')
 
 ```JavaScript
 const checkPermutation = (str1, str2) => {
-  const sorted1 = str1.split('').sort().join('').toLowerCase();
-  const sorted2 = str2.split('').sort().join('').toLowerCase();
-  return sorted1 === sorted2 ? true : false;
+  // const sorted1 = str1.split('').sort().join('').toLowerCase();
+  // const sorted2 = str2.split('').sort().join('').toLowerCase();
+  // return sorted1 === sorted2 ? true : false;
+
+  if (str1.length() !== str2.length()) return false;
+
+  const hash = {};
+
+  for (let i = 0; i < str1.length(); i++) {
+    hash[str1[i]]++;
+  }
+
+  for (let j = 0; j < str1.length(); j++) {
+    hash[str2[j]]--;
+    if (hash[str2[j]] < 0) return false;
+  }
+
+  return true;
 };
 ```
