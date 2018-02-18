@@ -288,3 +288,55 @@ while (array.length) {
 - Not recommended
 
 Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-6-how-to-empty-an-array-in-javascript)
+
+## What are the ways by which we can create objects in JS?
+**Method 1:** `Function Based`
+
+- Useful for creating several similar objects.
+
+```JavaScript
+class Cat(name, breed, color, age){
+  constructor() {
+    this.name = name;
+    this.breed = breed;
+    this.color = color;
+    this.age = age;
+  }
+}
+
+// Creates multiple object which have similar property but different value assigned to object property.
+const breakfast = new Cat('Breakfast', 'Persian', 'white', 3);
+const markov = new Cat('Markov', 'Russian Blue', 'grey', 4);
+const muffin = new Cat('Muffin', 'Bombay', 'black', 2);
+
+```
+
+**Method 2:** `Object Literal`
+
+- Best way to create an object and is used frequently.
+
+```JavaScript
+const breakfast = {
+  name: 'Breakfast',
+  breed: 'Persian',
+  color: 'white',
+  age: 3,
+  getName: function(){
+    return this.name;
+  }
+}
+```
+
+**Method 3:** Using JS `new` keyword
+
+```JavaScript
+const breakfast = new Object();
+breakfast.name = 'Breakfast';
+breakfast.getName = function(){
+  return this.name;
+}
+```
+
+- Note: best practice is to use the object literal method over the `new` keyword method.
+
+Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-28-what-are-the-way-by-which-we-can-create-object-in-javascript-)
