@@ -340,3 +340,65 @@ breakfast.getName = function(){
 - Note: best practice is to use the object literal method over the `new` keyword method.
 
 Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-28-what-are-the-way-by-which-we-can-create-object-in-javascript-)
+
+## How does one prevent a JS object from being modified?
+There are three levels of preventing object modification:
+
+**1 - Prevent extensions:** No new properties or methods can be added to the object, but existing properties and methods can be changed.
+
+```JavaScript
+const breakfast = {
+  name: 'Breakfast'
+};
+
+// lock the object
+Object.preventExtensions(breakfast);
+
+// Try to change the object property name:
+breakfast.name = 'Markov';
+console.log(breakfast.name); // => 'Markov'
+
+// Try to add a new object property:
+breakfast.age = 3; // fails silently unless in strict mode
+```
+
+**2 - Seal:** Performs the same functionality as prevent extension but also prevents existing properties and methods from being deleted.
+
+```JavaScript
+const breakfast = {
+  name: 'Breakfast'
+};
+
+// Seal the object:
+Object.seal(breakfast);
+
+console.log(Object.isExtensible(breakfast)); // => false
+console.log(Object.isSealed(breakfast)); // => true
+
+delete breakfast.name; // fails silently unless in strict mode
+
+breakfast.age = 3; // fails silently unless in strict mode
+```
+**3 - Freeze:** Same properties as seal, but also prevent existing properties and methods from being modified (i.e. all properties and method are read-only).
+
+```JavaScript
+const breakfast = {
+  name: 'Breakfast'
+};
+
+// Freeze the object:
+Object.freeze(breakfast);
+
+console.log(Object.isExtensible(breakfast)); // => false
+console.log(Object.isSealed(breakfast)); // => false
+console.log(Object.isFrozen(breakfast)); // => true
+
+
+breakfast.name = 'Markov'; // fails silently unless in strict mode
+breakfast.age = 3; // fails silently unless in strict mode
+delete breakfast.name; // fails silently unless in strict mode
+```
+
+**Note:** It is recommended to use strict mode if you decided to prevent modification, seal or freeze an object to catch any errors.
+
+Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-40-how-we-can-prevent-modification-of-object-in-javascript-)
