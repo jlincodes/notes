@@ -465,3 +465,28 @@ let obj2 = { age: 27 };
 ```
 
 Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-48-write-code-for-merge-two-javascript-object-dynamically)
+
+## What is `NaN`? What is its type? How can you reliably test if a value is NaN?
+
+The `NaN` property represents a value that is “not a number”. This special value results from an operation that could not be performed either because one of the operands was non-numeric (e.g., `"abc" / 4`), or because the result of the operation is non-numeric (e.g., an attempt to divide by zero).
+
+Although NaN means “not a number”, its type is, believe it or not, `Number`:
+
+`console.log(typeof NaN === "number");  // logs "true"`
+
+Additionally, NaN compared to anything – even itself! – is false:
+
+`console.log(NaN === NaN);  // logs "false"`
+
+### Testing if a value is NaN:
+
+1. Use `isNaN()` - somewhat reliable
+  - Special cases in which `isNaN` will return a false positive: empty string and boolean
+    - `isNaN` will type coerce the value passed in to type number and then check to see if that coerced value is "not a number". An empty string/boolean will type coerce to numeric values, zero or one, hence the false positive.
+2. Use `value !== value`. If a `value` is actually `NaN`, then it would not be equal to itself (`NaN !== NaN => true`). This approach is useful because it works across browsers.
+3. Use ES6's `Number.isNaN()`, which is more robust than the global `isNaN` (mentioned above). May not work across all browsers.
+
+Source: [37 Essential JavaScript Interview Questions](https://www.toptal.com/javascript/interview-questions)
+Source: [MDN Web Docs - isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN#Description)
+Source: [MDN Web Docs - Number.isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
+Source: [The Problem with Testing for NaN in JavaScript - A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-problem-with-testing-for-nan-in-javascript.html)
