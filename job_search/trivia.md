@@ -754,3 +754,52 @@ console.log(blue); // outputs: { r: 0, g: 0, b: 255 }
 ```
 
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/dealing-with-the-dangers-of-this-in-constructors.html)
+
+### Explain the difference between a Boolean object and a Boolean primitive?
+In JavaScript, there are constructors for each of the primitive data types, but the constructor functions do not create the same thing as the primitives.
+
+```JavaScript
+// Boolean primitives
+let primitiveTrue = true;
+let primitiveFalse = false;
+
+console.log(primitiveTrue); // outputs true
+console.log(primitiveFalse); // outputs false
+
+// Boolean objects
+let constructorTrue = new Boolean(true);
+let constructorFalse = new Boolean(false);
+
+console.log(constructorTrue); // outputs [Boolean: true]
+console.log(constructorFalse); // outputs [Boolean: false]
+```
+
+Booleans created with the `Boolean` constructor return objects, instead of primitives.
+
+Using the `Boolean` constructor can be dangerous. When using an object in a context that expects a boolean value, the object will be coerced to `true`. The `Boolean` object is the type 'object', so it will also coerce to `true`, even if its internal value is `false`.
+
+```JavaScript
+const truthyOrFalsey = (variable) => {
+  if (variable) {
+    console.log('this variable is a truthy value');
+  } else {
+    console.log('this variable is a falsey value');
+  }
+}
+
+truthyOrFalsey(primitiveFalse); // outputs 'this is a falsey value'
+truthyOrFalsey(constructorFalse); // outputs 'this is a truthy value'
+```
+
+A workaround for this is to use the `valueOf()` method to get the internal value of the `Boolean` object:
+
+```JavaScript
+// Outputs: "The value of my false Boolean object is falsy!"
+if (constructorFalse.valueOf()) {
+    console.log("The value of my false Boolean object is truthy!");
+} else {
+    console.log("The value of my false Boolean object is falsy!");
+}
+
+```
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-difference-between-boolean-objects-and-boolean-primitives-in-javascript.html)
