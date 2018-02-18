@@ -490,3 +490,121 @@ Source: [37 Essential JavaScript Interview Questions](https://www.toptal.com/jav
 Source: [MDN Web Docs - isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN#Description)
 Source: [MDN Web Docs - Number.isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN)
 Source: [The Problem with Testing for NaN in JavaScript - A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-problem-with-testing-for-nan-in-javascript.html)
+
+### Can one use a `for...in` loop to iterate over an array? Why is it recommended *not* to use the `for...in` loop for array iteration?
+
+The `for...in` loop can be used to iterate over an array.
+
+```JavaScript
+const tMinus = [
+    "Two",
+    "One",
+    "Blast off!"
+];
+
+let countdown = "";
+
+for (let step in tMinus) {
+    countdown += tMinus[step] + "\n";
+}
+
+console.log(countdown);
+// => "Two
+//    One
+//    Blast Off!
+//    "
+```
+
+However, there are three problems with using the `for...in` loop on arrays.
+
+1) The `for...in` also iterates over an object's prototype properties if those properties are enumerable.
+
+```JavaScript
+Array.prototype.voice = "James Earl Jones";
+
+const tMinus = [
+    "Two",
+    "One",
+    "Blast off!"
+];
+
+let countdown = "";
+
+for (let step in tMinus) {
+    countdown += tMinus[step] + "\n";
+}
+
+console.log(countdown);
+// => "Two
+//    One
+//    Blast Off!
+//    James Earl Jones
+//    "
+```
+This can be solved by using `hasOwnProperty` to exclude prototype properties.
+
+```JavaScript
+Array.prototype.voice = "James Earl Jones";
+
+const tMinus = [
+    "Two",
+    "One",
+    "Blast off!"
+];
+
+let countdown = "";
+
+for (let step in tMinus) {
+    if (tMinus.hasOwnProperty(step)) {
+        countdown += tMinus[step] + "\n";
+    }
+}
+
+console.log(countdown);
+// => "Two
+//    One
+//    Blast Off!
+//    "
+```
+
+2) `for...in` loops may iterate over an object's values in an arbitrary order.
+That's not really a problem for an ordinary object whose values are inherently unordered anyway. But you probably don't want your JavaScript engine handing back array values in a random order, because you could get unexpected results like this:
+
+```JavaScript
+console.log(countdown);
+// => "Blast Off!
+//    One
+//    Two
+//    "
+```
+
+3) It is possible to store additional properties on an array and `for...in` iterates over all enumerable properties, not just the array's elements.
+
+```JavaScript
+const tMinus = [
+    "Two",
+    "One",
+    "Blast off!"
+];
+
+tMinus.announcer = "Morgan Freeman";
+
+let countdown = "";
+
+for (let step in tMinus) {
+    if (tMinus.hasOwnProperty(step)) {
+        countdown += tMinus[step] + "\n";
+    }
+}
+
+console.log(countdown);
+// => "Two
+//    One
+//    Blast Off!
+//    Morgan Freeman
+//    "
+```
+
+Because of these problems, it is best to use a simple `for` loop or built-in array iterators like `forEach()` and `map()`.
+
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-problem-with-for-in-and-javascript-arrays.html)
