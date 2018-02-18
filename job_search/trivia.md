@@ -428,3 +428,40 @@ isString(objectStr); // => true
 ```
 
 Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-45--write-a-function-which-will-test-string-as-a-literal-and-as-an-object-)
+
+## How would you merge two objects?
+
+1. Use `Object.assign()` (ES6):
+
+```JavaScript
+const merge = (obj1, obj2) => {
+  return Object.assign(obj1, obj2);
+};
+```
+
+### Follow-up: how could you merge two objects without built-in method.
+```JavaScript
+const merge = (obj1, obj2) => {
+  // both params must be objects
+  if (typeof obj1 === 'object' && typeof obj2 === 'object') {
+    for (let prop in obj2) {
+      // only merge if obj2's property ('prop') is its own && not inherited
+      if (obj2.hasOwnProperty(prop)) {
+        obj1[prop] = obj2[prop];
+      }
+    }
+    return obj1;
+  } else {
+    throw 'merge will only work with two objects';
+  }
+};
+
+let obj1 = { name: 'Julie'};
+let obj2 = { age: 27 };
+
+// Tests:
+// console.log('Object.assign method', Object.assign(obj1, obj2));
+// console.log('merge function', merge(obj1, obj2));
+```
+
+Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-48-write-code-for-merge-two-javascript-object-dynamically)
