@@ -836,3 +836,62 @@ console.log(beforeM); // Outputs: ["A", "e", "l"]
 ```
 
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/using-javascripts-array-methods-on-strings.html)
+
+### What methods could one use to determine if a string contains a substring?
+
+1. `String.prototype.indexOf()`
+
+```JavaScript
+const isSubStr = (str, subStr) => {
+  if (str.indexOf(subStr) >= 0) {
+    console.log(`${subStr} is a substring of ${str}`);
+  } else {
+    console.log(`${subStr} is NOT a substring of ${str}`);
+  }
+}
+
+isSubStr('Blue Whale', 'Blue'); // "Blue is a substring of Blue Whale"
+isSubStr('Blue Whale', 'Blute'); // "Blute is NOT a substring of Blue Whale"
+```
+
+"While `indexOf` is often recommended as a simple way to test for the presence of a substring, that's not really its purpose. Its job is to return the index at which a given substring is found. In the event that no match is found, it will return `-1`. That means that we can use it, but the clarity of the code suffers. Ideally, what we're looking for is a method with a name that matches our intention (determining if x contains y), and returns a simple `true` or `false`."
+
+`String.prototype.search()` has the same behavior as `indexOf()`, with the exception of matching a regular expression rather than a string.
+
+2. `RegExp.prototype.test()`
+
+```JavaScript
+const isSubStr = (str, subStr) => {
+  let subStrRegExp = new RegExp(subStr)
+  if (subStrRegExp.text(str)) {
+    console.log(`${subStr} is a substring of ${str}`);
+  } else {
+    console.log(`${subStr} is NOT a substring of ${str}`);
+  }
+}
+
+isSubStr('Blue Whale', 'Blue'); // "Blue is a substring of Blue Whale"
+isSubStr('Blue Whale', 'Blute'); // "Blute is NOT a substring of Blue Whale"
+```
+
+This method is slightly better than `String.prototype.indexOf()` as it returns a boolean value and its method name communicates its intent more clearly. Unfortunately, we would run into problems if we try to match strings that include characters like `?` or `.` because they have special meanings in regular expressions. In this case, we would have to deal with escaping them.
+
+3. `String.prototype.includes()` (formerly named `String.prototype.contains()`)
+
+```JavaScript
+const isSubStr = (str, subStr) => {
+  if (str.includes(subStr)) {
+    console.log(`${subStr} is a substring of ${str}`);
+  } else {
+    console.log(`${subStr} is NOT a substring of ${str}`);
+  }
+}
+
+isSubStr('Blue Whale', 'Blue'); // "Blue is a substring of Blue Whale"
+isSubStr('Blue Whale', 'Blute'); // "Blute is NOT a substring of Blue Whale"
+```
+
+This method returns a boolean value AND clearly conveys the intent of the code. Note that the `includes()` method is case sensitive.
+
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/determining-if-a-string-contains-another-string-in-javascript-three-approaches.html)
+Source: [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
