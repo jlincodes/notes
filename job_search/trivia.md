@@ -91,8 +91,8 @@ var Employee = function (name, company, salary) {
     };
 
     // Public method
-    this.dispalyIncreasedSalary = function() {
-        increaseSlary();
+    this.displayIncreasedSalary = function() {
+        increaseSalary();
         console.log(this.salary);
     };
 };
@@ -229,3 +229,62 @@ foo(); // returns "TypeError: bar is not a function"
 ```
 
 Source: [learnsteady](http://www.learnsteady.com/javascript-function-declaration-vs-expression/)
+
+## How would you empty an array in JS?
+
+### Method 1:
+- Reassigns the array variable to an empty array
+- Only works for `var` and `let` variables)
+
+```JavaScript
+array = []
+```
+- Recommended only if you don't have references to the original array anywhere else. For example:
+
+```JavaScript
+let array = ['a', 'b', 'c', 'd', 'e', 'f']; // Creates array
+let anotherArray = array;  // References array by another variable
+array = []; // Empties the array
+console.log(anotherArray); // Outputs ['a', 'b', 'c', 'd', 'e', 'f']
+```
+
+### Method 2:
+- Set array length to `0`
+
+```JavaScript
+array.length = 0;
+```
+- Useful for updating all the reference variables that point to the original array. For example:
+
+```JavaScript
+const array = ['a', 'b', 'c', 'd', 'e', 'f']; // Creates array
+const anotherArray = array;  // References array by another variable
+array.length = 0; // Empties the array by setting length to 0
+console.log(anotherArray); // Outputs []
+```
+### Method 3:
+- Splice the array starting at index `0` to the length of the array
+
+```JavaScript
+arrayList.splice(0, arrayList.length);
+```
+
+- Also updates the reference variables that point to the original array:
+
+```JavaScript
+const array2 = ['a', 'b', 'c', 'd', 'e', 'f']; // Creates array
+const anotherArray2 = array;  // References array by another variable
+array2.splice(0, array2.length); // Empties the array by setting length to 0
+console.log(anotherArray2); // Outputs []
+```
+
+### Method 4:
+- Use a `while` loop and `Array.prototype.pop()`
+```JavaScript
+while (array.length) {
+  arrayList.pop();
+}
+```
+- Not recommended
+
+Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-6-how-to-empty-an-array-in-javascript)
