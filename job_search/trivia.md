@@ -646,3 +646,42 @@ For a robust method of checking objects' "value equality" it is better to rely o
 
 Source: [thatjsdude](https://www.thatjsdude.com/interview/js2.html#objectEquality)
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html)
+
+### How would you find an Object's size?
+Method 1: Create a function that iterates over each property and keeps track of a count.
+
+```JavaScript
+const bookAuthors = {
+    "Farmer Giles of Ham": "J.R.R. Tolkien",
+    "Out of the Silent Planet": "C.S. Lewis",
+    "The Place of the Lion": "Charles Williams",
+    "Poetic Diction": "Owen Barfield"
+};
+
+const countProperties = (obj) => {
+    let count = 0;
+
+    for (let property in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, property)) {
+            count++;
+        }
+    }
+
+    return count;
+};
+
+const bookCount = countProperties(bookAuthors);
+
+// Outputs: 4
+console.log(bookCount);
+```
+
+Method 2: Create an array of Object properties (or keys) and get the length of that array.
+```JavaScript
+const bookCount = Object.keys(bookAuthors).length;
+
+// Outputs: 4
+console.log(bookCount);
+```
+
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/finding-an-objects-size-in-javascript.html)
