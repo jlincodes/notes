@@ -685,3 +685,72 @@ console.log(bookCount);
 ```
 
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/finding-an-objects-size-in-javascript.html)
+
+### What happens if you try to invoke a constructor function without the `new` keyword?
+
+ES5 example:
+
+```JavaScript
+function Color(r, g, b) {
+  this.r = r;
+  this.g = g;
+  this.b = b;
+}
+
+// Safe invocation:
+var red = new Color(255, 0, 0);
+
+// Dangerous invocation:
+var blue = Color(0, 0, 255);
+```
+
+In the safe invocation example, the `this` value in the constructor function is set to the new object being created. However, in the dangerous invocation example (i.e. invoking the constructor function like a normal function), the `this` value is the same `this` variable that any other function gets. Usually, this variable refers to the global object (or `window` in the browser).
+
+Suppose we had a global variable `r`:
+
+```JavaScript
+// global variable:
+r = 'rainbows and unicorns'
+
+function Color(r, g, b) {
+  this.r = r;
+  this.g = g;
+  this.b = b;
+}
+
+// Dangerous invocation:
+var blue = Color(0, 0, 255);
+
+console.log(r); // output: 0
+
+console.log(blue); // outputs: undefined
+```
+
+One way to prevent this from accidentally happening is to add a check to see if `this` is an instance of the object:
+
+```JavaScript
+// global variable:
+r = 'rainbows and unicorns'
+
+function Color(r, g, b) {
+  if (this instanceof Color) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+  } else {
+    return new Color (r, g, b);
+
+    // Alternatively, throw an error
+    // throw new Error("`Color` invoked without `new`");
+  }
+}
+
+// Dangerous invocation:
+var blue = Color(0, 0, 255);
+
+console.log(r); // output: 'rainbows and unicorns'
+
+console.log(blue); // outputs: { r: 0, g: 0, b: 255 }
+```
+
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/dealing-with-the-dangers-of-this-in-constructors.html)
