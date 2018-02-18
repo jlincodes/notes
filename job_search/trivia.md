@@ -803,3 +803,36 @@ if (constructorFalse.valueOf()) {
 
 ```
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-difference-between-boolean-objects-and-boolean-primitives-in-javascript.html)
+
+### Is it possible to use Array methods on a string?
+
+In JavaScript, strings are immutable. So methods like `push()`, `pop()`, `shift()` and `splice()` will not work on strings.
+
+However, methods that treat strings as read-only will work on strings. For example:
+
+```JavaScript
+const ontologist = "Anselm";
+
+const hasSomeA = [].some.call(ontologist, function(val) {
+    return val === "A";
+});
+
+console.log(hasSomeA); // Outputs: true
+
+const everyCharIsE = [].every.call(ontologist, function(val) {
+    return val === "E";
+});
+
+console.log(everyCharIsE); // Outputs: false
+
+const beforeM = [].filter.call(ontologist, function(val) {
+    return val < "m";
+});
+
+console.log(beforeM); // Outputs: ["A", "e", "l"]
+// note that filter returns an array, rather than a string.
+// using `call` or `apply` doesn't change the function's logic,
+// just the value it operates on.
+```
+
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/using-javascripts-array-methods-on-strings.html)
