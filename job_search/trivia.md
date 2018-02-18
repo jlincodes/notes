@@ -895,3 +895,110 @@ This method returns a boolean value AND clearly conveys the intent of the code. 
 
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/determining-if-a-string-contains-another-string-in-javascript-three-approaches.html)
 Source: [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+
+### What is `this` in JavaScript?
+
+The value of `this` is usually determined by a function's execution context.
+
+In the global scope, `this` refers to the global Object (or the `window` Object in the browser).
+
+```JavaScript
+// in the browser
+console.log(this); // returns Window {...}
+```
+
+Depending on *how* a function is called, the `this` inside a function can still refer to the global Object.
+
+```JavaScript
+function myFunction() {
+  return this;
+}
+
+myFunction(); // returns Window {...} in the browser
+```
+
+When `this` is used inside a declared object (or Object literal), `this` is set to the *closest parent object* the method is called on.
+
+```JavaScript
+const breakfast = {
+  name: 'Breakfast',
+  age: 2,
+  displayThis: function () {
+    console.log(this);
+  },
+  markov: {
+    name: 'Markov',
+    age: 3,
+    displayThis: function () {
+      console.log(this);
+    }
+  }
+}
+
+breakfast.displayThis(); // => { name: 'Breakfast', age: 2, displayThis: function }
+breakfast.markov.displayThis(); // => { name: 'Markov', age: 3, displayThis: function }
+```
+
+When creating an instance of an object using the `new` keyword, `this` is bound to that new object instance.
+
+```JavaScript
+class Cat {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  displayThis() {
+    console.log(this);
+  }
+}
+
+const breakfast = new Cat('Breakfast', 2);
+const markov = new Cat('Markov', 3);
+breakfast.displayThis(); // Cat { name: "Breakfast", age: 2 }
+markov.displayThis(); // Cat { name: "Markov", age: 3 }
+
+
+```
+
+The value of `this` can be set explicitly with `call()`, `apply()` and `bind()`.
+
+```JavaScript
+function displayThis() {
+  console.log(this);
+}
+
+// call the function in the browser
+displayThis(); // => Window {...}
+
+// declare an object
+const obj = {
+  name: 'some random object'
+};
+
+displayThis.call(obj); // => { name: "some random object" }
+// the `this` value becomes the first parameter passed in the call() method.
+
+// let's look at another example:
+
+// declare a function `add`
+function add(b, c) {
+  return this + b + c;
+}
+
+// call the function
+add(2, 3); // => "[object Window]23"
+
+let num = 10;
+
+add.call(num, 2, 3); // => 15
+// in this case, `this` refers to the variable `num`
+
+```
+
+Note: ES6 Arrow Functions do not bind `this` - instead, `this` is bound lexically (i.e. based on the original context).
+
+Source: [codeburst.io](https://codeburst.io/javascript-the-keyword-this-for-beginners-fb5238d99f85)
+Source: [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+Source: [Sitepoint](https://www.sitepoint.com/what-is-this-in-javascript/)
+Source: [JavaScript.isSexy](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)
