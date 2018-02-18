@@ -608,3 +608,41 @@ console.log(countdown);
 Because of these problems, it is best to use a simple `for` loop or built-in array iterators like `forEach()` and `map()`.
 
 Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/the-problem-with-for-in-and-javascript-arrays.html)
+
+### How would you compare two objects in JavaScript?
+Since objects are compared by their reference (or space in memory), we cannot do a direct equality comparison with the `===` operator.
+
+Instead, we can check for two things: 1) whether both objects have the same number of properties, and 2) whether both objects have the same values for each property. Our `isEqual()` function might look like this:
+
+```JavaScript
+const isEqual = (objA, objB) => {
+  // check whether both objects have the same number of properties, or keys
+  if (Object.keys(objA).length !== Object.keys(objB).length) return false;
+
+  // check whether both objects have the same values for each property
+  for (let prop in objA) {
+    if (objA[prop] !== objB[prop]) {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+However, there are a few limitations:
+1) If one of the property values is another object.
+2) If one of the property values is `NaN` (because `NaN` never equates to itself)
+3) If one object has a property with value `undefined`, while another object doesn't have the property (which thus evaluates as `undefined`)
+
+For the first limitation, one could add a conditional in the `for...in` loop to check if the values in both objects are objects and then recursively call `isEqual()` on those object values.
+
+```JavaScript
+  if (typeof objA[prop] === 'object' && typeof objB[prop] === 'object') {
+    return isEqual(objA[prop], objB[prop]);
+  }
+```
+
+For a robust method of checking objects' "value equality" it is better to rely on a well-tested library that covers the various edge cases. Both Underscore and Lo-Dash have implementations named `_.isEqual` which handle deep object comparisons well.
+
+Source: [thatjsdude](https://www.thatjsdude.com/interview/js2.html#objectEquality)
+Source: [A Drip of JavaScript](http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html)
