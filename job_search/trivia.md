@@ -402,3 +402,29 @@ delete breakfast.name; // fails silently unless in strict mode
 **Note:** It is recommended to use strict mode if you decided to prevent modification, seal or freeze an object to catch any errors.
 
 Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-40-how-we-can-prevent-modification-of-object-in-javascript-)
+
+## Write a function that will test a given string as a literal and as an object.
+
+There are two ways to create a string: Literal and Function-based.
+
+```JavaScript
+let literalStr = "literal string";
+let objectStr = new String("object string");
+```
+
+In the test function, test the literal string using the `typeof` operator and test the `String` object using the `instanceof` operator:
+
+```JavaScript
+const isString = (str) => {
+  return typeof(str) === 'string' || str instanceof String;
+};
+
+// tests
+
+let literalStr = "literal string";
+let objectStr = new String("object string");
+isString(literalStr); // => true
+isString(objectStr); // => true
+```
+
+Source: [123 Essential JS Interview Questions](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Question#question-45--write-a-function-which-will-test-string-as-a-literal-and-as-an-object-)
