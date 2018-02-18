@@ -77,3 +77,37 @@ class MinStack {
   }
 }
 ```
+### Alternative ES6 JS Solution
+
+```JavaScript
+
+class MinStack {
+  constructor() {
+    this.minStack = [];
+  }
+
+  push(x) {
+    let currMin;
+    if (this.minStack.length === 0) {
+      currMin = x;
+    } else {
+      let prevMin = this.minStack[this.minStack.length - 1].val
+      currMin =  x < prevMin ? x : prevMin;
+    }
+
+    this.minStack.push({ val: x, min: currMin});
+  }
+
+  pop() {
+    this.minStack.pop();
+  }
+
+  top() {
+    return this.minStack[this.minStack.length - 1].val;
+  }
+
+  getMin() {
+    return this.minStack[this.minStack.length - 1].min;
+  }
+}
+```
