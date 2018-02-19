@@ -17,3 +17,6 @@ end
 p reverse_str('abcdef') # => 'fedcba'
 p reverse_str('abcdefg') # => 'gfedcba'
 ```
+
+- Time Complexity: O(n) where *n* is the number of characters in the string.
+- Space Complexity: O(1) constant extra space.
