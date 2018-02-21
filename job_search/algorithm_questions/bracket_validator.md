@@ -44,3 +44,6 @@ const hasValidBrackets = (str) => {
   return seen.length === 0;
 };
 ```
+
+- Time Complexity: O(n), n being the number of characters in the input string that we iterate over.
+- Space Complexity: O(n) constant extra space in the worst case scenario (if all the characters in the string are opening brackets)
