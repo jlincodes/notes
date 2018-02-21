@@ -21,3 +21,6 @@ const majorityElement = (nums) => {
   return Number.parseInt(majority);
 };
 ```
+
+- Time Complexity: O(n + m), *n* representing the number of elements in the input array and *m* representing the number of properties (or number of unique elements in the input array) in the hash table object
+- Space Complexity: O(m) extra space.
