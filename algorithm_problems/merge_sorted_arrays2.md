@@ -6,6 +6,9 @@ const mergeArrays = (arr1, arr2) => {
 };
 ```
 
+- Time Complexity: *O*(*n log n*), where *n* is the total length of the output array.
+- Space Complexity: *O*(*n*), where *n* is the length of our output array.
+
 ```JavaScript
 const mergeArrays = (arr1, arr2) => {
   const merged = [];
