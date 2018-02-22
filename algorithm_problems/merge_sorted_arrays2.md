@@ -32,3 +32,6 @@ const mergeArrays = (arr1, arr2) => {
   return merged;
 };
 ```
+
+- Time Complexity: *O*(*n*), where *n* is the total number of elements of both input arrays.
+- Space Complexity: *O*(*n*), where *n* is the number of elements in the output array.
