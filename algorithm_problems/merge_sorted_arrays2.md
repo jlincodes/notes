@@ -8,7 +8,7 @@ const mergeArrays = (arr1, arr2) => {
   let el1;
   let el2;
 
-  while (i < arr1.length && j < arr2.length) {
+  while (i < arr1.length || j < arr2.length) {
     el1 = arr1[i];
     el2 = arr2[j];
 
