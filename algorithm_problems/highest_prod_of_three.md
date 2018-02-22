@@ -21,3 +21,6 @@ const highestProd = (arr) => {
   return highestPos > highestNeg ? highestPos : highestNeg;
 };
 ```
+
+- Time Complexity: *O*(*n log n*), where *n* is the number of elements in the arr. Both `slice()` and `reverse()` perform *n* operations and `sort()` performs *n log n* operations.
+- Space Complexity: *O*(*n*), where *n* is the number of elements in the input arr.
