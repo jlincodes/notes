@@ -2,6 +2,12 @@ Given two sorted arrays, write a function to merge the arrays into one sorted ar
 
 ```JavaScript
 const mergeArrays = (arr1, arr2) => {
+  return arr1.concat(arr2).sort((a,b) => {return a - b;});
+};
+```
+
+```JavaScript
+const mergeArrays = (arr1, arr2) => {
   const merged = [];
   let i = 0;
   let j = 0;
