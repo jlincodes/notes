@@ -23,4 +23,17 @@ Do not assume the meetings are in order. The meeting times are coming from multi
 Write a solution that's efficient even when we can't put a nice upper bound on the numbers representing our time ranges. Here we've simplified our times down to the number of 30-minute slots past 9:00 am. But we want the method to work even for very large numbers, like Unix timestamps. In any case, the spirit of the challenge is to merge meetings where start_time and end_time don't have an upper bound.
 
 ```Ruby
+def merge_ranges(arr)
+  sorted = arr.sort
+  results = [sorted[0]]
+  sorted[1..-1].each do |curr_start, curr_end|
+    last_merged_start, last_merged_end = results[-1]
+    if curr_start <= last_merged_end
+      results[-1] = [last_merged_start, [last_merged_end, curr_end].max]
+    else
+      results.push([curr_start, curr_end])
+    end
+  end
+  results
+end
 ```
