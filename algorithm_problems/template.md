@@ -18,7 +18,7 @@ Problem prompt
 
 ```
 
-Time Complexity: **Complexity**
-Space Complexity: **Complexity**
+- Time Complexity: *O*(*n*)
+- Space Complexity: *O*(*n*)
 
 [Source](link)
