@@ -43,4 +43,4 @@ const addTwoNumbers = (l1, l2) => {
 - Time Complexity: *O*(max(*m,n*)), where *m* and *n* represent the number of nodes l1 and l2 respectively. The solution must iterate the max of m and n times in order to visit each node and get the sums.
 - Space Complexity: *O*(max(*m,n*) + 1). The new linked list will have as many nodes as the list (l1 or l2) with the max number of nodes plus the extra "dummy" headNode.
 
-[Source](link)
+[Leetcode](https://leetcode.com/problems/add-two-numbers/description/)
