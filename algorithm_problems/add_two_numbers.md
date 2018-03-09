@@ -11,7 +11,31 @@ Explanation: 342 + 465 = 807.
 
 
 ```JavaScript
+const addTwoNumbers = (l1, l2) => {
+    let headNode = new ListNode(0);
+    let currNode = headNode;
 
+    let first = l1;
+    let second = l2;
+    let carry = 0;
+
+    while (first !== null || second !== null) {
+        let firstVal = first !== null ? first.val : 0;
+        let secondVal = second !== null ? second.val : 0;
+        let sum = firstVal + secondVal + carry;
+
+        carry = Math.floor(sum / 10);
+        currNode.next = new ListNode(sum % 10);
+        currNode = currNode.next;
+
+        if (first !== null) first = first.next;
+        if (second !== null) second = second.next;
+    }
+
+    if (carry > 0) currNode.next = new ListNode(carry);
+
+
+    return headNode.next;
 };
 ```
 
