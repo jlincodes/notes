@@ -38,9 +38,7 @@ def is_anagram(s, t)
     return true
 end
 ```
-
-
 - Time Complexity: *O*(*n*)
 - Space Complexity: *O*(*n*)
 
-[Source](link)
+[Leetcode](https://leetcode.com/problems/valid-anagram/description/)
