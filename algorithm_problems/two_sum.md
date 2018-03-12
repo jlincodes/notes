@@ -70,9 +70,27 @@ const twoSum = (nums, target) => {
 
   for (let i = 0; i < nums.length; i++) {
     let temp = (target - nums[i]).toString();
-    if (numHash[temp]) {
+    if (numHash.hasOwnProperty(temp)) {
         return [i, numHash[temp]];
     }
+  }
+};
+```
+
+- Time complexity - O(n)
+- Space complexity - O(1)
+
+One-Pass Hash Method - JavaScript:
+```JavaScript
+const twoSum = (nums, target) => {
+  let numHash = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let temp = (target - nums[i]).toString();
+    if (numHash.hasOwnProperty(temp)) {
+        return [numHash[temp], i];
+    }
+    numHash[nums[i]] = i;
   }
 };
 ```
