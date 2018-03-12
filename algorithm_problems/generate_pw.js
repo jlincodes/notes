@@ -5,30 +5,21 @@ const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const numbers = '1234567890';
 
 function generatePassword(length) {
+  const characters = [uppercaseLetters, lowercaseLetters, numbers];
   const results = [];
 
   while (results.length < length) {
-    let key = Math.floor(Math.random() * 3);
-    let letterIdx = Math.floor(Math.random() * 26);
-    let numIdx = Math.floor(Math.random() * 10);
-    let char;
-    switch (key) {
-      case 0:
-        char = uppercaseLetters[letterIdx];
-        break;
-      case 1:
-        char = lowercaseLetters[letterIdx];
-        break;
-      case 2:
-        char = numbers[numIdx];
-        break;
-      default:
-        break;
-    }
+    const key = getRandomNum(characters.length);
+    const charList = characters[key];
+    const char = characters[getRandomNum(charList.length)];
     results.push(char);
   }
 
   return results.join('');
+}
+
+function getRandomNum(num) {
+  return Math.floor(Math.random() * num);
 }
 
 console.log(generatePassword(10));
