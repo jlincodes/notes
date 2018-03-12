@@ -64,21 +64,16 @@ end
 Two-Pass Hash Method - JavaScript:
 ```JavaScript
 const twoSum = (nums, target) => {
-  const indices = [];
+  let numHash = {};
 
-  hash = {};
-  nums.forEach((num, idx) => hash[nums[idx]] = idx);
+  nums.forEach( (num, idx) => numHash[num] = idx );
 
-  nums.forEach((num, idx) => {
-    let temp = (target - num).toString();
-    if (hash[temp] !== 'undefined' && hash[temp] !== idx) {
-      indices.push(idx)
-      indices.push(hash[temp]);
-      // forEach() returns 'undefined', so returning `indices` early is not possible
+  for (let i = 0; i < nums.length; i++) {
+    let temp = (target - nums[i]).toString();
+    if (numHash[temp]) {
+        return [i, numHash[temp]];
     }
-  });
-  // return indices at the end of the function but only the first 2 elements
-  return indices.slice(0, 2); 
+  }
 };
 ```
 
