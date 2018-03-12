@@ -30,3 +30,8 @@ const mergeTwoLists = (l1, l2) => {
 
   return dummyNode.next;
 };
+
+// Time Complexity: O(n + m)
+// Space Complexity: O(n + m)
+
+// Source: Leetcode
