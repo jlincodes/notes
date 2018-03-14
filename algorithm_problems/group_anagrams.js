@@ -6,3 +6,16 @@
 //   ['cars', 'scar'],
 //   ['foobar']
 // ]
+
+const groupAnagrams = (arr) => {
+  const groups = {};
+
+  arr.forEach( word => {
+    const sorted = word.split('').sort().join('');
+    !groups[sorted] ? groups[sorted] = [word] : groups[sorted].push(word);
+  });
+
+  return Object.values(groups);
+};
+
+console.log(groupAnagrams(['cat', 'dog', 'act', 'tac', 'god', 'cars', 'scar', 'foobar']));
