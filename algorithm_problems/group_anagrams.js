@@ -19,3 +19,11 @@ const groupAnagrams = (arr) => {
 };
 
 console.log(groupAnagrams(['cat', 'dog', 'act', 'tac', 'god', 'cars', 'scar', 'foobar']));
+
+
+/*
+Time complexity: O(n + m), where n is the number of elements in the
+array and m is the number of property/value pairs in the hash table.
+Space complexity: O(m), where m is the number of property/value pairs
+in the hash table object.
+*/
