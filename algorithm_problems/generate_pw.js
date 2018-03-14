@@ -1,8 +1,11 @@
-// console.log(Math.floor(Math.random() * 26));
+// Write a function that generates a random password from the following character groups:
 
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const numbers = '1234567890';
+
+// Add symbols into pool of characters
+// const symbols = '!@#$%^&*()_+-=[]\{}|;:",./<>?'
 
 function generatePassword(length) {
   const characters = [uppercaseLetters, lowercaseLetters, numbers];
@@ -43,3 +46,12 @@ function getRandomNum(num) {
 }
 
 console.log(generatePassword(10));
+
+// What is an optional "requirements" param was passed in?
+
+// console.log(generatePassword(13, {
+//   uppercase: 2,
+//   lowercase: 0,
+//   numbers: 3,
+//   symbols: 1
+// }));
