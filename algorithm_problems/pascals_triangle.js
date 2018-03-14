@@ -34,3 +34,7 @@ const generate = (numRows) => {
 
     return arr;
 };
+
+/*
+Time & Space Complexity: O(n^2) - where n is numRows
+*/
