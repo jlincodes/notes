@@ -29,6 +29,8 @@ function isMatch(alias, name) {
 function checkMiddle(aliasMid, nameMid) {
   if (aliasMid.length === 1 || nameMid.length === 1) {
     return isMatch(aliasMid.slice(0,1), nameMid.slice(0,1));
+  } else {
+    return isMatch(aliasMid, nameMid);
   }
 }
 
