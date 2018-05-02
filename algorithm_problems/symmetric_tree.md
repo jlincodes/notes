@@ -56,6 +56,34 @@ def is_symmetric(root)
 end
 ```
 
+```JavaScript
+const isSymmetric = (root) => {
+  if (root === null) return true;
+
+  const nodes = [];
+  nodes.push(root.left);
+  nodes.push(root.right);
+
+  while (nodes.length > 0) {
+    const node1 = nodes.shift();
+    const node2 = nodes.shift();
+
+    if (node1 === null && node2 === null) continue;
+    if (node1 === null || node2 === null) return false;
+    if (node1.val !== node2.val) {
+      return false;
+    } else {
+      nodes.push(node1.left);
+      nodes.push(node2.right);
+      nodes.push(node1.right);
+      nodes.push(node2.left);
+    }
+  }
+  
+  return true;
+};
+```
+
 **Recursive Approach:**
 ```Ruby
 # Definition for a binary tree node.
