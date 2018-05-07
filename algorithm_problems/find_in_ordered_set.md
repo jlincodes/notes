@@ -10,6 +10,7 @@ Suppose we had an array of n integers sorted in ascending order. How quickly cou
 // };
 
 // Optimized method with binary search:
+// Iterative
 const findInOrderedSet = (arr, target) => {
   // leftIdx & rightIdx act as "walls" that contain the indices
   // in which the target value exists.
@@ -34,6 +35,19 @@ const findInOrderedSet = (arr, target) => {
     }
   }
   return false;
+};
+
+// Recursive binary search:
+const findInOrderedSet = (arr, target) => {
+  if (arr.length === 0) return false;
+  const midIdx = Math.floor(arr.length/2);
+  const mid = arr[midIdx];
+  if (mid === target) return true;
+  if (mid > target) {
+    return binarySearch(arr.slice(0, midIdx), target);
+  } else {
+    return binarySearch(arr.slice(midIdx + 1), target);
+  }
 };
 
 // test case
